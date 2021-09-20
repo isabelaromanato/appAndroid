@@ -1,93 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
+        android:layout_height="130dp"
+        app:cardBackgroundColor="@color/pink"
+        app:cardCornerRadius="60dp"
+        android:layout_centerHorizontal="true">
         <ImageView
-            android:layout_width="100sp"
-            android:layout_height="100dp"
-            android:background="@drawable/balanca_logo"
-           android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user2"
+            android:scaleType="centerCrop"/>
 
+    </androidx.cardview.widget.CardView>
 
-     <TextView
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:text="Trocar Foto"
-         android:textColor="@color/pink"
-         android:textStyle="bold"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-         android:textSize="25sp"
         android:layout_marginStart="250dp"
-         android:layout_marginTop="150dp"/>
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Trocar Foto"
+        android:textColor="@color/pink"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:drawableStart="@drawable/senhaa"
-        android:hint="Dados para autenticação"
         android:layout_marginStart="20dp"
         android:layout_marginTop="200dp"
-        />
+        android:drawableStart="@drawable/senhaa"
+        android:fontFamily="@font/montserrat"
+        android:hint="Dados para autenticação"
+        android:textSize="20sp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="240dp"
-        android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:textSize="20sp"/>
+        android:fontFamily="@font/montserrat"
+        android:text="Email"
+        android:textSize="20sp" />
 
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Senha"
-        android:layout_marginTop="290dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="290dp"
         android:layout_marginEnd="20dp"
-        android:textSize="20sp"/>
+        android:fontFamily="@font/montserrat"
+        android:text="Senha"
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:drawableStart="@drawable/senhaa"
-        android:hint="Dados pessoais"
         android:layout_marginStart="20dp"
         android:layout_marginTop="350dp"
-        />
+        android:drawableStart="@drawable/senhaa"
+        android:fontFamily="@font/montserrat"
+        android:hint="Dados pessoais"
+        android:textSize="20sp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nome"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="390dp"
-        android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:textSize="20sp"/>
+        android:fontFamily="@font/montserrat"
+        android:text="Nome"
+        android:textSize="20sp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profissão"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="430dp"
-        android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:textSize="20sp"/>
+        android:fontFamily="@font/montserrat"
+        android:text="Profissão"
+        android:textSize="20sp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Altura"
-        android:layout_marginTop="470dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="470dp"
         android:layout_marginEnd="20dp"
-        android:textSize="20sp"/>
+        android:fontFamily="@font/montserrat"
+        android:text="Altura"
+        android:textSize="20sp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -98,19 +111,42 @@
         android:layout_marginEnd="20dp"
         android:textSize="20sp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sexo"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp" />
+
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Feminino"
         android:layout_marginStart="20dp"
-       android:layout_marginTop="570dp"
-        android:textSize="20sp"/>
+        android:layout_marginTop="600dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Feminino"
+        android:textSize="20sp" />
+
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="600dp"
+        android:fontFamily="@font/montserrat"
         android:text="Masculino"
-        android:layout_marginStart=""
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="610dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp" />
 
 </RelativeLayout>
