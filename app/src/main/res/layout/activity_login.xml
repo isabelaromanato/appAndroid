@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="550dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginStart="270dp"
+            android:layout_marginStart="260dp"
             android:text="Lembrar-me"
             android:textSize="20sp"
            android:textColor="@color/cinza"/>
@@ -121,7 +121,8 @@
         android:layout_marginTop="580dp"
         android:textColor="@color/blue"
         android:textSize="15sp"
-        android:layout_marginStart="300dp" />
+        android:layout_marginStart="290dp"
+        android:layout_marginEnd="10dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -129,7 +130,8 @@
         android:text="Não tem conta?"
         android:layout_marginTop="600dp"
         android:textSize="15sp"
-        android:layout_marginStart="155sp"/>
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="140sp"/>
 
 
     <TextView
@@ -137,9 +139,10 @@
         android:layout_height="wrap_content"
         android:text="Crie uma conta agora"
         android:textColor="@color/blue"
-        android:layout_marginStart="270sp"
+        android:layout_marginStart="260sp"
         android:textSize="15sp"
-        android:layout_marginTop="600dp" />
+        android:layout_marginTop="600dp"
+        android:layout_marginEnd="10dp"/>
 
     <ImageView
         android:layout_width="match_parent"
@@ -151,7 +154,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="750dp"
+        android:layout_marginTop="700dp"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
