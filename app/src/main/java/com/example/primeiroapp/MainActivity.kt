@@ -1,5 +1,6 @@
 package com.example.primeiroapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -32,6 +33,21 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-    }
 
+        //para o appBar aparecer apenas na tela que gostariamos
+
+        supportActionBar!!.hide()
+
+        //para redimencionar para outra tela
+
+        val tvHello = findViewById<TextView>(R.id.et_data)
+
+        tvHello.setOnClickListener {
+
+            val abrirActivityDatePicker = Intent(this, DatePickerActivity::class.java)
+
+            startActivity(abrirActivityDatePicker)
+        }
+
+    }
 }

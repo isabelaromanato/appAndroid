@@ -106,6 +106,7 @@
         android:textSize="20sp" />
 
     <EditText
+        android:id="@+id/et_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Data de Nascimento"
