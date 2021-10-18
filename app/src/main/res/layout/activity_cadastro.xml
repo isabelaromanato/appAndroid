@@ -4,10 +4,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
     <androidx.cardview.widget.CardView
         android:layout_width="120dp"
         android:layout_height="130dp"
@@ -31,129 +27,137 @@
         android:fontFamily="@font/montserrat"
         android:text="Trocar Foto"
         android:textColor="@color/pink"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="190dp"
         android:drawableStart="@drawable/senhaa"
         android:fontFamily="@font/montserrat"
         android:hint="Dados para autenticação"
         android:textSize="20sp" />
 
     <EditText
+        android:id="@+id/edit_text_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/montserrat"
-        android:text="Email"
-        android:textSize="20sp" />
+        android:hint="Email"
+        android:textSize="18sp" />
 
 
     <EditText
+        android:id="@+id/edit_text_senha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="270dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/montserrat"
-        android:text="Senha"
-        android:textSize="20sp" />
+        android:hint="Senha"
+        android:textSize="18sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="330dp"
         android:drawableStart="@drawable/senhaa"
         android:fontFamily="@font/montserrat"
         android:hint="Dados pessoais"
         android:textSize="20sp" />
 
     <EditText
+        android:id="@+id/edit_text_nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="370dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/montserrat"
-        android:text="Nome"
-        android:textSize="20sp" />
+        android:hint="Nome"
+        android:textSize="18sp" />
 
     <EditText
+        android:id="@+id/edit_text_profissao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="430dp"
+        android:layout_marginTop="410dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/montserrat"
-        android:text="Profissão"
-        android:textSize="20sp" />
+        android:hint="Profissão"
+        android:textSize="18sp" />
 
     <EditText
+        android:id="@+id/edit_text_altura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="470dp"
+        android:layout_marginTop="450dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/montserrat"
-        android:text="Altura"
-        android:textSize="20sp" />
+        android:hint="Altura"
+        android:textSize="18sp" />
 
     <EditText
+
         android:id="@+id/et_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Data de Nascimento"
-        android:layout_marginTop="510dp"
+        android:hint="Data de Nascimento"
+        android:layout_marginTop="490dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:textSize="20sp"/>
+        android:textSize="18sp"
+        android:focusable="false"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sexo"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="560dp"
+        android:layout_marginTop="540dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/montserrat"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="560dp"
         android:fontFamily="@font/montserrat"
         android:text="Feminino"
-        android:textSize="20sp" />
+        android:textSize="18sp"
+        android:focusable="false"/>
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="560dp"
         android:fontFamily="@font/montserrat"
         android:text="Masculino"
-        android:textSize="20sp" />
+        android:textSize="18sp"
+        android:focusable="false"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="610dp"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/montserrat"
-        android:textSize="20sp" />
-
-    </ScrollView>
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginTop="560dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:fontFamily="@font/montserrat"-->
+<!--        android:textSize="20sp" />-->
 
 </RelativeLayout>
 
