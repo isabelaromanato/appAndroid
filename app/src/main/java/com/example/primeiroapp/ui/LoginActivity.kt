@@ -1,12 +1,10 @@
-package com.example.primeiroapp
+package com.example.primeiroapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.EditText
 import android.widget.TextView
+import com.example.primeiroapp.R
 
 class LoginActivity : AppCompatActivity() {
 
@@ -20,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
 
         criarConta.setOnClickListener {
             val abrirActivityLogin =
-            Intent(this, DatePickerActivity::class.java)
+            Intent(this, NovoUsuarioActivity::class.java)
 
             startActivity(abrirActivityLogin)
         }

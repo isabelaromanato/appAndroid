@@ -9,8 +9,11 @@
         android:roundIcon="@drawable/balanca_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeiroApp">
-        <activity android:name=".DatePickerActivity"/>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".ui.DashboardActivity">
+
+        </activity>
+        <activity android:name=".ui.NovoUsuarioActivity" />
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +21,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

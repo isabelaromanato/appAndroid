@@ -1,15 +1,21 @@
-package com.example.primeiroapp
+package com.example.primeiroapp.ui
 
 import android.app.DatePickerDialog
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.Toast
+import com.example.primeiroapp.R
+import com.example.primeiroapp.model.Usuario
+import com.example.primeiroapp.utils.convertStringToLocalDate
+import java.time.LocalDate
 import java.util.*
 
-class DatePickerActivity : AppCompatActivity() {
+class NovoUsuarioActivity : AppCompatActivity() {
 
     lateinit var editEmail: EditText
     lateinit var editSenha: EditText
@@ -17,6 +23,8 @@ class DatePickerActivity : AppCompatActivity() {
     lateinit var editProfissao: EditText
     lateinit var editAltura: EditText
     lateinit var etData: EditText
+    lateinit var radioF: RadioButton
+    lateinit var radioM: RadioButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +36,8 @@ class DatePickerActivity : AppCompatActivity() {
         editProfissao = findViewById(R.id.edit_text_profissao)
         editAltura = findViewById(R.id.edit_text_altura)
         etData = findViewById(R.id.et_data)
+        radioF = findViewById(R.id.radio_feminino)
+        radioM = findViewById(R.id.radio_masculino)
 
         supportActionBar!!.title = "Novo Usuário"
 //        supportActionBar!!.subtitle = "Aprendendo a lidar com os menus"
@@ -65,8 +75,54 @@ class DatePickerActivity : AppCompatActivity() {
 
         if(validarCampos()){
 
-        }
+            //Criar o objeto usuario
 
+                val nascimento =  convertStringToLocalDate(etData.text.toString())
+
+              val usuario = Usuario(
+                  1,
+                  editNome.text.toString(),
+                  editEmail.text.toString(),
+                  editSenha.text.toString(),
+                  0,
+                  editAltura.text.toString().toDouble(),
+                  LocalDate.of(
+                      nascimento.year,
+                      nascimento.monthValue,
+                      nascimento.dayOfMonth
+                  ),
+                editProfissao.text.toString(),
+                if (radioF.isChecked){
+                    'F'
+                }else {
+                    'M'
+                }
+              )
+
+            //Salvar o registro em um SharedPreferences
+
+            //A intrução abaixo irá criar um arquivo sharedPreferences se não existir
+            //Se existir ele será aberto para edição
+
+            val dados = getSharedPreferences("usuario", Context.MODE_PRIVATE)
+
+
+            //Vamos criar o objeto que permitirá a edição dos dados do arquivo SharedPreferences
+
+            val editor = dados.edit()
+            editor.putInt("id", usuario.id)
+            editor.putString("nome", usuario.nome)
+            editor.putString("email", usuario.email)
+            editor.putString("senha", usuario.senha)
+            editor.putInt("peso", usuario.peso)
+            editor.putFloat("altura", usuario.altura.toFloat())
+            editor.putString("dataNascimento", usuario.dataNascimento.toString())
+            editor.putString("profissao", usuario.profissao)
+            editor.putString("sexo", usuario.sexo.toString())
+            editor.apply()
+            
+        }
+        Toast.makeText(this, "Usuário Cadastrado", Toast.LENGTH_SHORT).show()
         return true
     }
 
