@@ -2,18 +2,24 @@ package com.example.primeiroapp.ui
 
 import android.app.DatePickerDialog
 import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.Toast
+import android.widget.*
 import com.example.primeiroapp.R
 import com.example.primeiroapp.model.Usuario
+import com.example.primeiroapp.utils.convertBitmapToBase64
 import com.example.primeiroapp.utils.convertStringToLocalDate
 import java.time.LocalDate
 import java.util.*
+
+const val CODE_IMAGE = 100
 
 class NovoUsuarioActivity : AppCompatActivity() {
 
@@ -25,6 +31,11 @@ class NovoUsuarioActivity : AppCompatActivity() {
     lateinit var etData: EditText
     lateinit var radioF: RadioButton
     lateinit var radioM: RadioButton
+    lateinit var tv_TrocarFoto: TextView
+    lateinit var ivFotoPerfil: ImageView
+    var imageBitmap: Bitmap? = null
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +49,15 @@ class NovoUsuarioActivity : AppCompatActivity() {
         etData = findViewById(R.id.et_data)
         radioF = findViewById(R.id.radio_feminino)
         radioM = findViewById(R.id.radio_masculino)
+        tv_TrocarFoto = findViewById(R.id.tv_trocar_foto)
+        ivFotoPerfil = findViewById(R.id.iv_foto_perfil)
+
+
+        //Abrir a galeria de fotos para escolher uma foto para o perfil
+
+
+        tv_TrocarFoto.setOnClickListener{
+                abrirGaleria()}
 
         supportActionBar!!.title = "Novo Usuário"
 //        supportActionBar!!.subtitle = "Aprendendo a lidar com os menus"
@@ -58,12 +78,66 @@ class NovoUsuarioActivity : AppCompatActivity() {
         etDataNascimento.setOnClickListener {
             val dp = DatePickerDialog(this,
                     DatePickerDialog.OnDateSetListener { view, _ano, _mes, _dia ->
-                        etDataNascimento.setText("$_dia/$mes/$ano")
+
+                        var diaFinal = _dia
+                        var mesFinal = _mes + 1
+
+                        var mesString = "$mesFinal"
+                        var diaString = "$diaFinal"
+
+                     if(mesFinal < 10 ) {
+                        mesString = "0$mesFinal"
+
+                     }
+
+                        if(diaFinal < 10 ){
+                            diaString = "0$diaFinal"
+                        }
+
+                        etDataNascimento.setText("$diaString/$mesString/$_ano")
                     }, ano, mes, dia)
 
             dp.show()
         }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, imagem: Intent?) {
+        super.onActivityResult(requestCode, resultCode, imagem)
+
+        //Verificar o código do resultado
+//        Log.i("xpto", resultCode.toString())
+
+        if (requestCode == CODE_IMAGE && resultCode == -1){
+
+            //Recuperar a imagem do stream
+
+            val fluxoImagem = contentResolver.openInputStream(imagem!!.data!!)
+
+            //Converter os bits em um bitmap
+
+            imageBitmap = BitmapFactory.decodeStream(fluxoImagem)
+
+            //Colocar o BitMap no ImageView
+
+            ivFotoPerfil.setImageBitmap(imageBitmap)
+
+    }
+        }
+
+    private fun abrirGaleria() {
+
+        //Abrir a galeria no dispositivo
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "image/*"
+
+
+    //Abrir a Activity responsável por exibir as imagens
+    //Esta Activity retornará o conteúdo selecionado para o nosso app
+
+    startActivityForResult(Intent.createChooser(intent, "Escolha uma foto"), CODE_IMAGE)
+    
+}
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
@@ -77,7 +151,7 @@ class NovoUsuarioActivity : AppCompatActivity() {
 
             //Criar o objeto usuario
 
-                val nascimento =  convertStringToLocalDate(etData.text.toString())
+                val nascimento = convertStringToLocalDate(etData.text.toString())
 
               val usuario = Usuario(
                   1,
@@ -92,11 +166,8 @@ class NovoUsuarioActivity : AppCompatActivity() {
                       nascimento.dayOfMonth
                   ),
                 editProfissao.text.toString(),
-                if (radioF.isChecked){
-                    'F'
-                }else {
-                    'M'
-                }
+                if (radioF.isChecked) 'F' else 'M',
+                      convertBitmapToBase64(imageBitmap!!)
               )
 
             //Salvar o registro em um SharedPreferences
@@ -119,6 +190,7 @@ class NovoUsuarioActivity : AppCompatActivity() {
             editor.putString("dataNascimento", usuario.dataNascimento.toString())
             editor.putString("profissao", usuario.profissao)
             editor.putString("sexo", usuario.sexo.toString())
+            editor.putString("fotoPerfil", usuario.fotoPerfil.toString())
             editor.apply()
             
         }
