@@ -11,5 +11,7 @@ fun convertBitmapToBase64(bitmap: Bitmap) : String {
 
     bitmap.compress(Bitmap.CompressFormat.JPEG,100, bitmapArray)
 
-    return Base64.encodeToString(bitmapArray.toByteArray(), Base64.DEFAULT)
+    return android.util.Base64.encodeToString(bitmapArray.toByteArray(), Base64.DEFAULT)
+
+   
 }
