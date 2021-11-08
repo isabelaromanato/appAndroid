@@ -35,8 +35,6 @@ class NovoUsuarioActivity : AppCompatActivity() {
     lateinit var ivFotoPerfil: ImageView
     var imageBitmap: Bitmap? = null
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
@@ -53,8 +51,13 @@ class NovoUsuarioActivity : AppCompatActivity() {
         ivFotoPerfil = findViewById(R.id.iv_foto_perfil)
 
 
-        //Abrir a galeria de fotos para escolher uma foto para o perfil
+        //Carregar Bitmap padrão caso o usuário não escolha uma foto
+        imageBitmap = BitmapFactory.decodeResource(resources, R.drawable.user)
 
+        //Caso a imagem seja um vector asset
+//        imageBitmap = resourses.getDrawable(R.drawable.user).toBitmap()
+
+        //Abrir a galeria de fotos para escolher uma foto para o perfil
 
         tv_TrocarFoto.setOnClickListener{
                 abrirGaleria()}
@@ -201,6 +204,10 @@ class NovoUsuarioActivity : AppCompatActivity() {
     fun validarCampos(): Boolean {
 
         var valido = true
+
+        if (imageBitmap == null){
+
+        }
 
         if (editEmail.text.isEmpty()) {
             editEmail.error = "O campo 'e-mail' é obrigatório!"

@@ -12,4 +12,9 @@ fun convertStringToLocalDate(brazilDate:String): LocalDate{
 return localDateFormat
 }
 
+fun dcalcularIdade(){
+
+}
+
+
 

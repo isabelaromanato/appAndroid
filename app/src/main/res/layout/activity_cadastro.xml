@@ -14,7 +14,7 @@
             android:id="@+id/iv_foto_perfil"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/user2"
+            android:src="@drawable/user"
             android:scaleType="centerCrop"/>
 
     </androidx.cardview.widget.CardView>
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="270dp"
+        android:layout_marginStart="290dp"
         android:layout_marginTop="150dp"
         android:fontFamily="@font/montserrat"
         android:text="Trocar Foto"
