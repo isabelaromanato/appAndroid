@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.primeiroapp.R
+import com.example.primeiroapp.utils.calcularIdade
 import com.example.primeiroapp.utils.convertBase64toBitmap
 
 class DashboardActivity : AppCompatActivity() {
@@ -34,6 +35,7 @@ class DashboardActivity : AppCompatActivity() {
         tvAltura = findViewById(R.id.tv_dash_altura)
         ivPerfil = findViewById(R.id.iv_dash_foto_perfil)
 
+
         carregarDashboard()
     }
 
@@ -43,6 +45,7 @@ class DashboardActivity : AppCompatActivity() {
         tvNome.text = arquivo.getString("nome", "")
         tvProfissao.text = arquivo.getString("profissao", "")
         tvAltura.text = arquivo.getFloat("altura", 0.0f).toString()
+        tvIdade.text= calcularIdade(arquivo.getString("dataNascimento", "")!!).toString()
 
         val bitmap = convertBase64toBitmap(arquivo.getString("fotoPerfil", "")!!)
         ivPerfil.setImageBitmap(bitmap)
