@@ -38,7 +38,7 @@ class Pesagem2Activity : AppCompatActivity() {
         editor.putString("nivel", "$nivel;${spinnerNivel.selectedItemPosition.toString()}")
         editor.apply()
 
-            Toast.makeText(this, "Peso registradp com sucesso", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Peso registrado com sucesso", Toast.LENGTH_SHORT).show()
             finish()
         }
     }

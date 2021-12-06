@@ -221,6 +221,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relative_historico"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/formato_edit_text"

@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/balanca_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeiroApp">
-        <activity android:name=".Pesagem2Activity"></activity>
+        <activity android:name=".ui.HistoricoActivity"></activity>
+        <activity android:name=".Pesagem2Activity" />
         <activity android:name=".PesagemActivity" />
         <activity android:name=".ui.DashboardActivity" />
         <activity android:name=".ui.NovoUsuarioActivity" />
